@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Eventos | Carregadores de Materiais & Gestão</title>
+    
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="#home" class="brand-logo">
+                <i class="fa-solid fa-boxes-packing logo-icon"></i>
+                <span>STAFF<span class="purple-text">EVENTOS</span></span>
+            </a>
+            
+            <nav class="nav-links">
+                <a href="#home"><i class="fa-solid fa-house"></i> Início</a>
+                <a href="#sistema"><i class="fa-solid fa-truck-ramp-box"></i> Painel de Carga</a>
+                <a href="#contratar" class="btn-primary-sm"><i class="fa-solid fa-handshake"></i> Contratar Equipe</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <span class="badge"><i class="fa-solid fa-shield-halved"></i> Equipe Especializada de Carga & Descarga</span>
+                <h1>Força Bruta, Técnica e Eficiência para o seu Evento</h1>
+                <p>Carregadores de materiais treinados para montagem e desmontagem de palco, som, iluminação e estrutura com máxima segurança e agilidade.</p>
+                <div class="hero-actions">
+                    <a href="#contratar" class="btn-primary"><i class="fa-solid fa-user-plus"></i> Contratar a Equipe</a>
+                    <a href="#sistema" class="btn-secondary"><i class="fa-solid fa-list-check"></i> Testar Painel Operacional</a>
+                </div>
+            </div>
+            <div class="hero-card">
+                <div class="owner-profile">
+                    <div class="avatar">
+                        <i class="fa-solid fa-user-tie"></i>
+                    </div>
+                    <h3>Emanuel Victor</h3>
+                    <p class="role">Fundador & Diretor de Operações</p>
+                    <div class="stats-mini">
+                        <div>
+                            <h4>+500</h4>
+                            <span>Eventos Atendidos</span>
+                        </div>
+                        <div>
+                            <h4>100%</h4>
+                            <span>Pontualidade</span>
+                        </div>
+                    </div>
+                    <a href="#contratar" class="btn-whatsapp-block">
+                        <i class="fa-brands fa-whatsapp"></i> Falar Direto com Carlos
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sistema de Carregador de Materiais -->
+    <section id="sistema" class="section-system">
+        <div class="container">
+            <div class="section-header">
+                <h2><i class="fa-solid fa-boxes-stacked"></i> Sistema Carregador de Materiais</h2>
+                <p>Gerencie o carregamento, descarregamento e transporte interno dos equipamentos do evento.</p>
+            </div>
+
+            <!-- KPIs -->
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <i class="fa-solid fa-box kpi-icon"></i>
+                    <div>
+                        <span class="kpi-title">Total de Itens</span>
+                        <h3 id="kpi-total">0</h3>
+                    </div>
+                </div>
+                <div class="kpi-card">
+                    <i class="fa-solid fa-truck-loading kpi-icon text-warning"></i>
+                    <div>
+                        <span class="kpi-title">Carregados</span>
+                        <h3 id="kpi-loaded">0</h3>
+                    </div>
+                </div>
+                <div class="kpi-card">
+                    <i class="fa-solid fa-circle-check kpi-icon text-success"></i>
+                    <div>
+                        <span class="kpi-title">Descarregados / No Local</span>
+                        <h3 id="kpi-unloaded">0</h3>
+                    </div>
+                </div>
+                <div class="kpi-card">
+                    <i class="fa-solid fa-weight-hanging kpi-icon text-purple"></i>
+                    <div>
+                        <span class="kpi-title">Peso Estimado Total</span>
+                        <h3 id="kpi-weight">0 kg</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formulário de Cadastro de Material -->
+            <div class="card form-card">
+                <h3><i class="fa-solid fa-plus-circle"></i> Cadastrar Novo Material para Carga</h3>
+                <form id="material-form" class="material-form-grid">
+                    <div class="form-group">
+                        <label>Nome do Equipamento / Caixa</label>
+                        <input type="text" id="mat-name" placeholder="Ex: Case Praticáveis, Moving Heads" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Setor / Destino</label>
+                        <select id="mat-sector" required>
+                            <option value="Palco">Palco</option>
+                            <option value="Som">Som / P.A</option>
+                            <option value="Iluminação">Iluminação</option>
+                            <option value="Cenografia">Cenografia / Estrutura</option>
+                            <option value="Bar/Apoio">Bar / Apoio</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Quantidade de Volumes</label>
+                        <input type="number" id="mat-qty" min="1" value="1" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Peso Aprox. por Unidade (kg)</label>
+                        <input type="number" id="mat-weight" min="1" value="10" required>
+                    </div>
+                    <div class="form-group full-width">
+                        <button type="submit" class="btn-primary">
+                            <i class="fa-solid fa-arrow-down-to-bracket"></i> Adicionar à Lista de Carga
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Tabela de Materiais -->
+            <div class="card table-card">
+                <div class="table-header">
+                    <h3><i class="fa-solid fa-list"></i> Lista de Controle de Carregamento</h3>
+                    <div class="filters">
+                        <select id="filter-sector">
+                            <option value="ALL">Todos os Setores</option>
+                            <option value="Palco">Palco</option>
+                            <option value="Som">Som</option>
+                            <option value="Iluminação">Iluminação</option>
+                            <option value="Cenografia">Cenografia</option>
+                            <option value="Bar/Apoio">Bar/Apoio</option>
+                        </select>
+                        <select id="filter-status">
+                            <option value="ALL">Todos os Status</option>
+                            <option value="Pendente">Pendente</option>
+                            <option value="Carregado">Carregado</option>
+                            <option value="Descarregado">Descarregado</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Item / Equipamento</th>
+                                <th>Setor</th>
+                                <th>Qtd / Peso Tot.</th>
+                                <th>Status da Carga</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="materials-tbody">
+                            <!-- Inserido dinamicamente via JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção para Contratar o Dono da Empresa -->
+    <section id="contratar" class="section-hire">
+        <div class="container">
+            <div class="section-header">
+                <h2><i class="fa-solid fa-file-signature"></i> Solicitar Equipe de Carregadores</h2>
+                <p>Entre em contato direto com o responsável para orçar a quantidade exata de pessoas para seu evento.</p>
+            </div>
+
+            <div class="hire-grid">
+                <!-- Informações e Benefícios -->
+                <div class="hire-info">
+                    <div class="info-card">
+                        <i class="fa-solid fa-users-gear info-icon"></i>
+                        <div>
+                            <h4>Equipe Completa e Treinada</h4>
+                            <p>Profissionais com EPIs (Luvas, botas de bico de aço e protetor auricular) prontos para trabalho pesado.</p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <i class="fa-solid fa-stopwatch info-icon"></i>
+                        <div>
+                            <h4>Agilidade na Montagem</h4>
+                            <p>Cumprimento rigoroso de horários de passagem de som e liberação de espaço.</p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <i class="fa-solid fa-truck-moving info-icon"></i>
+                        <div>
+                            <h4>Carga e Descarga Segura</h4>
+                            <p>Manuseio adequado de cases, lâmpadas, painéis de LED e equipamentos sensíveis.</p>
+                        </div>
+                    </div>
+
+                    <div class="direct-contact-box">
+                        <h4>Contato Direto por WhatsApp</h4>
+                        <p>Respostas rápidas em menos de 15 minutos para orçamentos de urgência.</p>
+                        <a href="https://wa.me/5561998105292?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20de%20carregadores%20de%20materiais." target="_blank" class="btn-whatsapp">
+                            <i class="fa-brands fa-whatsapp"></i> Enviar Mensagem no WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Formulário de Contratação -->
+                <div class="card hire-form-card">
+                    <h3>Formulário de Orçamento</h3>
+                    <form id="hire-form">
+                        <div class="form-group">
+                            <label>Seu Nome ou Nome da Produtora</label>
+                            <input type="text" id="hire-name" placeholder="Ex: João Silva (Produtora XYZ)" required>
+                        </div>
+                        <div class="form-group">
+                            <label>WhatsApp para Contato</label>
+                            <input type="tel" id="hire-phone" placeholder="(11) 99999-9999" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Data e Local do Evento</label>
+                            <input type="text" id="hire-location" placeholder="Ex: 15/11 - Expo Center Norte" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Quantos Carregadores Precisa?</label>
+                            <select id="hire-staff-qty" required>
+                                <option value="2 a 4 Carregadores">2 a 4 Carregadores (Pequeno porte)</option>
+                                <option value="5 a 10 Carregadores">5 a 10 Carregadores (Médio porte)</option>
+                                <option value="Mais de 10 Carregadores">Mais de 10 Carregadores (Grandes Shows / Festivais)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Detalhes do Trabalho (Peso, Horários, etc)</label>
+                            <textarea id="hire-notes" rows="4" placeholder="Conte brevemente sobre os tipos de equipamentos..."></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary full-width">
+                            <i class="fa-solid fa-paper-plane"></i> Enviar Pedido de Orçamento
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 <strong>Staff Eventos</strong>. Todos os direitos reservados. Projeto modular.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScripts Modulares (Ordem Correta) -->
+    <script src="js/storage.js"></script>
+    <script src="js/materials.js"></script>
+    <script src="js/hire.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
